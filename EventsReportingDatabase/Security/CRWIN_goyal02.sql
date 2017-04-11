@@ -1,0 +1,4 @@
+﻿CREATE USER [CRWIN\goyal02] FOR LOGIN [CRWIN\goyal02];
+
+
+

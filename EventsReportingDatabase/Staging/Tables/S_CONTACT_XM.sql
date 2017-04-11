@@ -1,0 +1,21 @@
+﻿CREATE TABLE [PreStaging].[S_CONTACT_XM] (
+    [ROW_ID]      NVARCHAR (60)  NOT NULL,
+    [CREATED]     DATETIME       NULL,
+    [CREATED_BY]  NVARCHAR (60)  NULL,
+    [LAST_UPD]    DATETIME       NULL,
+    [LAST_UPD_BY] NVARCHAR (60)  NULL,
+    [ATTRIB_04]   NVARCHAR (120) NULL,
+    [ATTRIB_08]   NVARCHAR (4)   NULL,
+    [ATTRIB_34]   NVARCHAR (200) NULL,
+    [NAME]        NVARCHAR (400) NULL,
+    [TYPE]        NVARCHAR (120) NULL,
+    [PAR_ROW_ID]  NVARCHAR (60)  NULL,
+    [ETLRunPkgID] INT            NULL,
+    [ETRunStepID] INT            NULL,
+    [CreatedDate] DATETIME2 (7)  NOT NULL,
+    [UpdatedDate] DATETIME2 (7)  NOT NULL,
+    CONSTRAINT [PK_S_CONTACT_XM] PRIMARY KEY CLUSTERED ([ROW_ID] ASC)
+);
+
+
+

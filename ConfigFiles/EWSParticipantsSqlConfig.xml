@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataLoaderConfiguration>
+        <WebService>
+	        <Name>Participants</Name>
+			 <Url>
+				<Protocol>https</Protocol>
+				<Host>devapi.events.cancerresearchuk.org</Host>
+				<Path>/app_integration.php/api/v3/reporting/participants</Path>
+			</Url>
+			<Iterator>offset</Iterator>
+				<Parameter>
+                    <Name>updatedFrom</Name>                    
+                    <Value>2015-05-01</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+                <Parameter>
+                    <Name>updatedTo</Name>                    
+                    <Value>2017-05-05</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+                <Parameter>
+                    <Name>limit</Name>                    
+                    <Value>50</Value>
+                    <Format></Format>
+                </Parameter>
+            <Authetication>                
+			<TokenUrl>
+					<Protocol>https</Protocol>
+					<Host>devapi.events.cancerresearchuk.org</Host>
+					<Path>/app_staging.php/oauth/v2/token</Path>
+			</TokenUrl>      				
+                  <Parameter>
+                        <Name>client_id</Name>                    
+                        <Value>4_21pbdbp9cow00c0wkwckkksc8g0k0c8ock4scssscwwwc008o0</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>client_secret</Name>                    
+                        <Value>4f49jbm7kckk8s0ooc0k4c0gg4wossgks8g0cw0wsk44oscc44</Value>
+                    </Parameter>
+					<Parameter>
+                        <Name>grant_type</Name>                    
+                        <Value>client_credentials</Value>
+                    </Parameter>     
+            </Authetication>
+        </WebService>
+        <Table>
+		    <Source>results</Source>
+		    <Destination>PreStaging.EWSParticipants</Destination>
+			<BatchIdColumn>BatchId</BatchIdColumn>
+		    <ColumnSet>
+			    <Column>
+				    <Source>id</Source>
+				    <Destination>ParticipantsID</Destination>
+			    </Column>	
+				<Column>
+				    <Source>participantReference</Source>
+				    <Destination>ParticipantReference</Destination>
+			    </Column>	
+				<Column>
+				    <Source>primaryPerson</Source>
+				    <Destination>PrimaryPerson</Destination>
+			    </Column>	
+				
+				<Column>
+				    <Source>person</Source>
+				    <Destination>PersonID</Destination>
+			    </Column>	
+				
+				
+				<Column>
+				    <Source>created</Source>
+				    <Destination>Created</Destination>
+					<DataType>DateTime</DataType>
+			    </Column>	
+				<Column>
+				    <Source>updated</Source>
+				    <Destination>Updated</Destination>
+					<DataType>DateTime</DataType>
+			    </Column>	
+				
+				
+				
+		    </ColumnSet>
+			
+	<!--		
+		  <Table>
+			    <Source>eventSpecific</Source>
+			    <Destination>PreStaging.EWSEventSpecific</Destination>
+          <BatchIdColumn>BatchId</BatchIdColumn>
+          <ForeignKey>
+                  <Field>id</Field>
+                  <Column>ParticipantsID</Column>
+          </ForeignKey>
+			    <ColumnSet>
+					    <Column>
+					    <Source>id</Source>
+					    <Destination>EventSpecificID</Destination>
+				    </Column>	
+				
+					<Column>
+					    <Source>ParticipantsID</Source>
+					    <Destination>ParticipantsID</Destination>
+				    </Column>	
+					
+	
+				    <Column>
+					    <Source>name</Source>
+					    <Destination>Name</Destination>
+				    </Column>	
+				    <Column>
+					    <Source>status</Source>
+					    <Destination>Status</Destination>
+				    </Column>	
+					<Column>
+				    <Source>created</Source>
+				    <Destination>Created</Destination>
+					<DataType>DateTime</DataType>
+			    </Column>	
+				<Column>
+				    <Source>updated</Source>
+				    <Destination>Updated</Destination>
+					<DataType>DateTime</DataType>
+			    </Column>
+		    </ColumnSet>
+		    </Table>	
+	-->					    				
+		
+		    				
+    </Table>	
+</DataLoaderConfiguration>

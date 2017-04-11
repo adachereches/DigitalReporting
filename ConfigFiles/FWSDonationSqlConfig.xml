@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataLoaderConfiguration>
+        <WebService>
+	        <Name>Donations</Name>
+			 <Url>
+				<Protocol>https</Protocol>
+				<Host>fws.int.cruk.org</Host>
+				<Path>/app_release.php/v1/donation.json</Path>
+			</Url>
+			<Iterator>offset</Iterator>
+			
+				<Parameter>
+                    <Name>updatedFrom</Name>                    
+                    <Value>2010-05-01</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+                <Parameter>
+                    <Name>updatedTo</Name>                    
+                    <Value>2017-05-05</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+			
+                <Parameter>
+				
+                    <Name>limit</Name>                    
+                    <Value>50</Value>
+                    <Format></Format>
+                </Parameter>
+           
+		   <Authetication>                
+			<TokenUrl>
+					<Protocol>https</Protocol>
+								
+					<Host>oauth.int.cruk.org</Host>
+					<Path>/app_release.php/v1/token</Path>
+					<Method>Post</Method>
+					
+			</TokenUrl>      			
+			
+                  <Parameter>
+                        <Name>client_id</Name>                    
+                        <Value>9338a5cd13d3329eafbdb6f4dd03c17ee8eaa33a5cf025ab63</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>client_secret</Name>                    
+                        <Value>204589f30f7fa90d8d645a3a8656ca78ab1270fd68a82d92fd</Value>
+                    </Parameter>
+					<Parameter>
+                        <Name>grant_type</Name>                    
+                        <Value>client_credentials</Value>
+
+						</Parameter>     
+
+			</Authetication>
+
+		</WebService>
+        <Table>
+		    <Source>results</Source>
+		    <Destination>PreStaging.FWSDonation</Destination>
+			<BatchIdColumn>BatchId</BatchIdColumn>
+		    <ColumnSet>
+			    <Column>
+				    <Source>uniqueId</Source>
+				    <Destination>DonationUniqueID</Destination>
+			    </Column>	
+				
+				<Column>
+				    <Source>amount</Source>
+				    <Destination>Amount</Destination>
+			    </Column>	
+				
+								
+				<Column>
+				    <Source>donationType</Source>
+				    <Destination>DonationType</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>financialPaymentReference</Source>
+				    <Destination>FinancialPaymentReference</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>letterCode</Source>
+				    <Destination>LetterCode</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>paymentMethod</Source>
+				    <Destination>PaymentMethod</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>paymentStatus</Source>
+				    <Destination>PaymentStatus</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>personalGiftAid</Source>
+				    <Destination>PersonalGiftAid</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>reasonNotGiftAid</Source>
+				    <Destination>ReasonNotGiftAid</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>originatorPaymentId</Source>
+				    <Destination>OriginatorPaymentId</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>toBeGiftAided</Source>
+				    <Destination>ToBeGiftAided</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>letterCodeGad</Source>
+				    <Destination>LetterCodeGad</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>methodGad</Source>
+				    <Destination>MethodGad</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>paymentProviderTransactionId</Source>
+				    <Destination>PaymentProviderTransactionId</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>gadType</Source>
+				    <Destination>GadType</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>bankAccountCodeCruk</Source>
+				    <Destination>BankAccountCodeCruk</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>donationName</Source>
+				    <Destination>DonationName</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>donationMessage</Source>
+				    <Destination>DonationMessage</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>created</Source>
+				    <Destination>Created</Destination>
+					<DataType>DateTime</DataType>
+			    </Column>
+				
+				<Column>
+				    <Source>updated</Source>
+				    <Destination>Updated</Destination>
+					<DataType>DateTime</DataType>
+			    </Column>
+					
+				<Column>
+					    <Source>fundraisingPage.uniqueId</Source>
+					    <Destination>FundraisingPageUniqueId</Destination>
+				</Column>
+					
+				<Column>
+					    <Source>donor.uniqueId</Source>
+					    <Destination>DonorUniqueID</Destination>
+				</Column>				
+
+			 </ColumnSet>
+			 
+			 
+			
+			 
+    </Table>	
+</DataLoaderConfiguration>

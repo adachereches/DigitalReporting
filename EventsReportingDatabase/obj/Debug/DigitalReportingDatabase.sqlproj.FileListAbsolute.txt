@@ -1,0 +1,9 @@
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\bin\Debug\DigitalReportingDatabase.dacpac
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\bin\Debug\EventsReportingDatabase.dll
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\bin\Debug\EventsReportingDatabase.pdb
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\obj\Debug\Model.xml
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\obj\Debug\refactor.xml
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\obj\Debug\postdeploy.sql
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\obj\Debug\predeploy.sql
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\obj\Debug\EventsReportingDatabase.dll
+C:\_work\trunk\DigitalReporting\EventsReportingDatabase\obj\Debug\EventsReportingDatabase.pdb

@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [SIEBEL]
+    AUTHORIZATION [dbo];
+

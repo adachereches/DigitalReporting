@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataLoaderConfiguration>
+        <WebService>
+	        <Name>TeamMember</Name>
+			 <Url>
+				<Protocol>https</Protocol>
+				<Host>fws.int.cruk.org</Host>
+				<Path>/app_release.php/v1/teammember.json</Path>
+			</Url>
+			<Iterator>offset</Iterator>
+			
+				<Parameter>
+                    <Name>updatedFrom</Name>                    
+                    <Value>2015-05-01</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+                <Parameter>
+                    <Name>updatedTo</Name>                    
+                    <Value>2017-05-05</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+			
+                <Parameter>
+				
+                    <Name>limit</Name>                    
+                    <Value>50</Value>
+                    <Format></Format>
+                </Parameter>
+           
+		   <Authetication>                
+			<TokenUrl>
+					<Protocol>https</Protocol>
+								
+					<Host>oauth.int.cruk.org</Host>
+					<Path>/app_release.php/v1/token</Path>
+					<Method>Post</Method>
+					
+			</TokenUrl>      			
+			
+                  <Parameter>
+                        <Name>client_id</Name>                    
+                        <Value>9338a5cd13d3329eafbdb6f4dd03c17ee8eaa33a5cf025ab63</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>client_secret</Name>                    
+                        <Value>204589f30f7fa90d8d645a3a8656ca78ab1270fd68a82d92fd</Value>
+                    </Parameter>
+					<Parameter>
+                        <Name>grant_type</Name>                    
+                        <Value>client_credentials</Value>
+
+						</Parameter>     
+
+			</Authetication>
+
+		</WebService>
+        <Table>
+		    <Source>results</Source>
+		    <Destination>PreStaging.FWSTeamMember</Destination>
+			<BatchIdColumn>BatchId</BatchIdColumn>
+		    <ColumnSet>
+			    <Column>
+				    <Source>uniqueId</Source>
+				    <Destination>TeamMemberUniqueID</Destination>
+			    </Column>	
+				
+				
+				 <Column>
+				    <Source>membershipStatus</Source>
+				    <Destination>MembershipStatus</Destination>
+			    </Column>	
+				
+				<Column>
+					    <Source>fundraisingPage.uniqueId</Source>
+					    <Destination>FundraisingPageUniqueID</Destination>
+				</Column>
+				
+				<Column>
+					    <Source>team.uniqueId</Source>
+					    <Destination>TeamUniqueID</Destination>
+				</Column>
+				
+				
+				<Column>
+						<Source>created</Source>
+						<Destination>Created</Destination>
+						<DataType>DateTime</DataType>
+				</Column>	
+
+				
+				<Column>
+						<Source>updated</Source>
+						<Destination>Updated</Destination>
+						<DataType>DateTime</DataType>
+				</Column>
+				
+				<Column>
+						<Source>deleted</Source>
+						<Destination>Deleted</Destination>
+						<DataType>DateTime</DataType>
+				</Column>
+				
+				
+
+
+			 </ColumnSet>
+			 
+		 
+			
+			 
+    </Table>	
+</DataLoaderConfiguration>

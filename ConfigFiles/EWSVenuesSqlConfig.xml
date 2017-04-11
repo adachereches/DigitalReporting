@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataLoaderConfiguration>
+        <WebService>
+	        <Name>Venues</Name>
+			 <Url>
+				<Protocol>https</Protocol>
+				<Host>devapi.events.cancerresearchuk.org</Host>
+				<Path>/app_integration.php/api/v3/venues</Path>
+			</Url>
+			<Iterator>offset</Iterator>
+			<!-- 
+				<Parameter>
+                    <Name>updatedFrom</Name>                    
+                    <Value>2015-05-01</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+                <Parameter>
+                    <Name>updatedTo</Name>                    
+                    <Value>2017-05-05</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+			 -->
+                <Parameter>
+                    <Name>limit</Name>                    
+                    <Value>50</Value>
+                    <Format></Format>
+                </Parameter>
+            <Authetication>                
+			<TokenUrl>
+					<Protocol>https</Protocol>
+					<Host>devapi.events.cancerresearchuk.org</Host>
+					<Path>/app_staging.php/oauth/v2/token</Path>
+			</TokenUrl>      				
+                  <Parameter>
+                        <Name>client_id</Name>                    
+                        <Value>4_21pbdbp9cow00c0wkwckkksc8g0k0c8ock4scssscwwwc008o0</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>client_secret</Name>                    
+                        <Value>4f49jbm7kckk8s0ooc0k4c0gg4wossgks8g0cw0wsk44oscc44</Value>
+                    </Parameter>
+					<Parameter>
+                        <Name>grant_type</Name>                    
+                        <Value>client_credentials</Value>
+                    </Parameter>     
+            </Authetication>
+        </WebService>
+        <Table>
+		    <Source>results</Source>
+		    <Destination>PreStaging.EWSVenues</Destination>
+			<BatchIdColumn>BatchId</BatchIdColumn>
+		    <ColumnSet>
+			    <Column>
+				    <Source>id</Source>
+				    <Destination>VenuesID</Destination>
+			    </Column>	
+				<Column>
+				    <Source>name</Source>
+				    <Destination>Name</Destination>
+			    </Column>	
+				<Column>
+				    <Source>line1</Source>
+				    <Destination>Line1</Destination>
+			    </Column>	
+				<Column>
+				    <Source>line2</Source>
+				    <Destination>Line2</Destination>
+			    </Column>	
+				<Column>
+				    <Source>line3</Source>
+				    <Destination>Line3</Destination>
+			    </Column>	
+				<Column>
+				    <Source>city</Source>
+				    <Destination>City</Destination>
+			    </Column>	
+				<Column>
+				    <Source>postalCode</Source>
+				    <Destination>PostalCode</Destination>
+			    </Column>	
+				
+				
+				<Column>
+				    <Source>country</Source>
+				    <Destination>Country</Destination>
+			    </Column>	
+				
+				<Column>
+				    <Source>longitude</Source>
+				    <Destination>Longitude</Destination>
+			    </Column>	
+				<Column>
+				    <Source>latitude</Source>
+				    <Destination>Latitude</Destination>
+			    </Column>	
+				
+				<Column>
+				    <Source>status</Source>
+				    <Destination>Status</Destination>
+			    </Column>	
+				
+				
+				
+		    </ColumnSet>
+			
+		 		
+		    				
+    </Table>	
+</DataLoaderConfiguration>

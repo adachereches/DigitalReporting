@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataLoaderConfiguration>
+        <WebService>
+	        <Name>Events</Name>
+			 <Url>
+				<Protocol>https</Protocol>
+				<Host>devapi.events.cancerresearchuk.org</Host>
+				<Path>/app_integration.php/api/v3/reporting/events</Path>
+			</Url>
+			<Iterator>offset</Iterator>
+				<Parameter>
+                    <Name>updatedFrom</Name>                    
+                    <Value>2015-05-01</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+                <Parameter>
+                    <Name>updatedTo</Name>                    
+                    <Value>2017-05-05</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+                <Parameter>
+                    <Name>limit</Name>                    
+                    <Value>50</Value>
+                    <Format></Format>
+                </Parameter>
+            <Authetication>                
+			<TokenUrl>
+					<Protocol>https</Protocol>
+					<Host>devapi.events.cancerresearchuk.org</Host>
+					<Path>/app_staging.php/oauth/v2/token</Path>
+			</TokenUrl>      				
+                  <Parameter>
+                        <Name>client_id</Name>                    
+                        <Value>4_21pbdbp9cow00c0wkwckkksc8g0k0c8ock4scssscwwwc008o0</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>client_secret</Name>                    
+                        <Value>4f49jbm7kckk8s0ooc0k4c0gg4wossgks8g0cw0wsk44oscc44</Value>
+                    </Parameter>
+					<Parameter>
+                        <Name>grant_type</Name>                    
+                        <Value>client_credentials</Value>
+                    </Parameter>     
+            </Authetication>
+        </WebService>
+		
+	<!-- events info start -->	
+       <Table>
+		    <Source>results</Source>
+		    <Destination>PreStaging.EWSEvents</Destination>
+			<BatchIdColumn>BatchId</BatchIdColumn>
+		    <ColumnSet>
+			    <Column>
+				    <Source>id</Source>
+				    <Destination>EventID</Destination>
+			    </Column>	
+				<Column>
+				    <Source>eventName</Source>
+				    <Destination>EventName</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>eventCode</Source>
+				    <Destination>EventCode</Destination>
+			    </Column>	
+				
+				<Column>
+				    <Source>previousEventCode</Source>
+				    <Destination>PreviousEventCode</Destination>
+			    </Column>	
+				
+				
+				<Column>
+				    <Source>defaultSiebelRegistrationStatus</Source>
+				    <Destination>DefaultSiebelRegistrationStatus</Destination>
+			    </Column>	
+				
+				
+				
+				<Column>
+				    <Source>organiserCategory</Source>
+				    <Destination>OrganiserCategory</Destination>
+			    </Column>	
+				<Column>
+				    <Source>eventStatus</Source>
+				    <Destination>EventStatus</Destination>
+			    </Column>	
+				<Column>
+				    <Source>cancellationReason</Source>
+				    <Destination>CancellationReason</Destination>
+			    </Column>	
+				<Column>
+				    <Source>cancellationReasonDescription</Source>
+				    <Destination>CancellationReasonDescription</Destination>
+			    </Column>	
+				
+				<Column>
+				    <Source>description</Source>
+				    <Destination>Description</Destination>
+			    </Column>	
+			
+				<Column>
+				    <Source>criticalAmendMessage</Source>
+				    <Destination>CriticalAmendMessage</Destination>
+			    </Column>	
+				<Column>
+				    <Source>owner</Source>
+				    <Destination>Owner</Destination>
+			    </Column>	
+				<Column>
+				    <Source>startDateTime</Source>
+				    <Destination>StartDateTime</Destination>
+			    </Column>	
+				<Column>
+				    <Source>endDateTime</Source>
+				    <Destination>EndDateTime</Destination>
+			    </Column>	
+				 
+				<Column>
+				    <Source>venueReference</Source>
+				    <Destination>VenueReference</Destination>
+			    </Column>	
+				<Column>
+				    <Source>subPropositionReference</Source>
+				    <Destination>SubPropositionReference</Destination>
+			    </Column>	
+				<Column>
+				    <Source>fundraisingRestriction</Source>
+				    <Destination>FundraisingRestriction</Destination>
+			    </Column>
+				<Column>
+				    <Source>FundraisingProduct</Source>
+				    <Destination>FundraisingProduct</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>distance</Source>
+				    <Destination>Distance</Destination>
+			    </Column>
+				<Column>
+				    <Source>distanceUnit</Source>
+				    <Destination>DistanceUnit</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>ageFrom</Source>
+				    <Destination>AgeFrom</Destination>
+			    </Column>
+				<Column>
+				    <Source>ageTo</Source>
+				    <Destination>AgeTo</Destination>
+			    </Column>
+				<Column>
+				    <Source>gender</Source>
+				    <Destination>Gender</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>financialYear</Source>
+				    <Destination>FinancialYear</Destination>
+			    </Column>
+				
+				 <Column>
+				    <Source>runningNumberRequired</Source>
+				    <Destination>RunningNumberRequired</Destination>
+			    </Column> 
+				
+				
+				  <Column>
+				    <Source>paidTicketsRequired</Source>
+				    <Destination>PaidTicketsRequired</Destination>
+			    </Column> 
+				
+				
+				 <Column>
+				    <Source>bankAccountCode</Source>
+				    <Destination>BankAccountCode</Destination>
+			    </Column>  
+				
+				
+				<Column>
+				    <Source>allowedOpenWaves</Source>
+				    <Destination>AllowedOpenWaves</Destination>
+			    </Column>
+				
+				
+				<Column>
+						<Source>created</Source>
+						<Destination>Created</Destination>
+						<DataType>DateTime</DataType>
+				</Column>	
+
+						
+				<Column>
+						<Source>updated</Source>
+						<Destination>Updated</Destination>
+						<DataType>DateTime</DataType>
+				</Column>	
+
+			</ColumnSet>	
+	   
+												<!-- venue info start -->
+															<Table>
+																	<Source>venueInfo</Source>
+																	<Destination>PreStaging.EWSVenueInfo</Destination>
+																	<BatchIdColumn>BatchId</BatchIdColumn>
+																	 <ForeignKey>
+																			  <Field>id</Field>
+																			  <Column>EventID</Column>
+																	  </ForeignKey>
+																	
+																	
+																	<ColumnSet>
+															
+																			<Column>
+																			<Source>id</Source>
+																			<Destination>VenueInfoID</Destination>
+																			</Column>
+																	
+																			<Column>
+																			<Source>EventID</Source>
+																			<Destination>EventID</Destination>
+																			</Column>
+																			
+																			<Column>
+																			<Source>meetingPointLongitude</Source>
+																			<Destination>MeetingPointLongitude</Destination>
+																			</Column>	
+																		
+																			
+																			<Column>
+																			<Source>meetingPointLatitude</Source>
+																			<Destination>MeetingPointLatitude</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>meetingPointDescription</Source>
+																			<Destination>MeetingPointDescription</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>courseDescription</Source>
+																			<Destination>CourseDescription</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>accessibilityDescription</Source>
+																			<Destination>AccessibilityDescription</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>travelNotes</Source>
+																			<Destination>TravelNotes</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>spectatorAccessNotes</Source>
+																			<Destination>SpectatorAccessNotes</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>disabilityAccessible</Source>
+																			<Destination>DisabilityAccessible</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>parkingAvailable</Source>
+																			<Destination>ParkingAvailable</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>dogsAllowed</Source>
+																			<Destination>DogsAllowed</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>suitableForPushchairs</Source>
+																			<Destination>SuitableForPushchairs</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>showersAvailable</Source>
+																			<Destination>ShowersAvailable</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>toiletsAvailable</Source>
+																			<Destination>ToiletsAvailable</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>bagDropAvailable</Source>
+																			<Destination>BagDropAvailable</Destination>
+																			</Column>	
+																			
+																			<Column>
+																			<Source>refreshmentsAvailable</Source>
+																			<Destination>RefreshmentsAvailable</Destination>
+																			</Column>	
+																			
+																			<Column>
+																					<Source>created</Source>
+																					<Destination>Created</Destination>
+																					<DataType>DateTime</DataType>
+																			</Column>	
+
+																	
+																			<Column>
+																					<Source>updated</Source>
+																					<Destination>Updated</Destination>
+																					<DataType>DateTime</DataType>
+																			</Column>
+																	
+																	</ColumnSet>
+															</Table>		
+											   <!--venue info end -->
+														
+									
+									
+												<!-- waves info start -->					
+															 <Table>
+																	<Source>waves</Source>
+																	<Destination>PreStaging.EWSWaves</Destination>
+																	<BatchIdColumn>BatchId</BatchIdColumn>
+																	  <ForeignKey>
+																				  <Field>id</Field>
+																				  <Column>EventID</Column>
+																	  </ForeignKey>
+																	
+																	<ColumnSet>
+																					<Column>
+																					<Source>id</Source>
+																					<Destination>WaveID</Destination>
+																					</Column>	
+																			
+																					<Column>
+																					<Source>EventID</Source>
+																					<Destination>EventID</Destination>
+																					</Column>
+																					
+																					<Column>
+																					<Source>orderingNumber</Source>
+																					<Destination>OrderingNumber</Destination>
+																					</Column>	
+																					
+																					<Column>
+																					<Source>waveCode</Source>
+																					<Destination>WaveCode</Destination>
+																					</Column>	
+																				
+																				
+																					<Column>
+																					<Source>waveStatus</Source>
+																					<Destination>WaveStatus</Destination>
+																					</Column>	
+																				
+																					<Column>
+																					<Source>cancellationReason</Source>
+																					<Destination>CancellationReason</Destination>
+																					</Column>	
+																					
+																					<Column>
+																					<Source>cancellationReasonDescription</Source>
+																					<Destination>CancellationReasonDescription</Destination>
+																					</Column>	
+																					
+																					<Column>
+																					<Source>startDateTime</Source>
+																					<Destination>StartDateTime</Destination>
+																					</Column>	
+																					
+																					<Column>
+																					<Source>runningNumberPrefix</Source>
+																					<Destination>RunningNumberPrefix</Destination>
+																					</Column>	
+																					
+																					<Column>
+																					<Source>runningNumberStart</Source>
+																					<Destination>RunningNumberStart</Destination>
+																					</Column>	
+																					
+																					<Column>
+																					<Source>created</Source>
+																					<Destination>Created</Destination>
+																					<DataType>DateTime</DataType>
+																					</Column>	
+
+																					<Column>
+																					<Source>updated</Source>
+																					<Destination>Updated</Destination>
+																					<DataType>DateTime</DataType>
+																					</Column>
+																	</ColumnSet>
+															</Table>
+											<!--waves info end -->
+											
+											
+											<!-- event type info start -->		
+															<Table>
+																	<Source>eventTypes</Source>
+																	<Destination>PreStaging.EWSEventTypes</Destination>
+																	<BatchIdColumn>BatchId</BatchIdColumn>
+																	  <ForeignKey>
+																				  <Field>id</Field>
+																				  <Column>EventID</Column>
+																	  </ForeignKey>
+													
+																	<ColumnSet>
+																			<Column>
+																			<Source>EventID</Source>
+																			<Destination>EventID</Destination>
+																			</Column>
+																	
+																			<Column>
+																			<Source>Value</Source>
+																			<Destination>EventTypes</Destination>
+																			</Column>	
+																	</ColumnSet>
+											</Table>
+											<!--event type info end -->
+											
+											
+											
+									
+							
+		</Table>				
+	<!-- events info end -->
+
+</DataLoaderConfiguration>

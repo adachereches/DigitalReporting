@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataLoaderConfiguration>
+        <WebService>
+	        <Name>FundraisingPage</Name>
+			 <Url>
+				<Protocol>https</Protocol>
+				<Host>fws.int.cruk.org</Host>
+				<Path>/app_release.php/v1/fundraisingpage.json</Path>
+			</Url>
+			<Iterator>offset</Iterator>
+			
+				<Parameter>
+                    <Name>updatedFrom</Name>                    
+                    <Value>2015-05-01</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+                <Parameter>
+                    <Name>updatedTo</Name>                    
+                    <Value>2017-05-05</Value>
+                    <Format>YYYY-MM-DD</Format>
+                </Parameter>
+			
+                <Parameter>
+				
+                    <Name>limit</Name>                    
+                    <Value>50</Value>
+                    <Format></Format>
+                </Parameter>
+           
+		   <Authetication>                
+			<TokenUrl>
+					<Protocol>https</Protocol>
+								
+					<Host>oauth.int.cruk.org</Host>
+					<Path>/app_release.php/v1/token</Path>
+					<Method>Post</Method>
+					
+			</TokenUrl>      			
+			
+                  <Parameter>
+                        <Name>client_id</Name>                    
+                        <Value>9338a5cd13d3329eafbdb6f4dd03c17ee8eaa33a5cf025ab63</Value>
+                    </Parameter>
+                    <Parameter>
+                        <Name>client_secret</Name>                    
+                        <Value>204589f30f7fa90d8d645a3a8656ca78ab1270fd68a82d92fd</Value>
+                    </Parameter>
+					<Parameter>
+                        <Name>grant_type</Name>                    
+                        <Value>client_credentials</Value>
+
+						</Parameter>     
+
+			</Authetication>
+
+		</WebService>
+        <Table>
+		    <Source>results</Source>
+		    <Destination>PreStaging.FWSFundraisingPage</Destination>
+			<BatchIdColumn>BatchId</BatchIdColumn>
+		    <ColumnSet>
+			    <Column>
+				    <Source>uniqueId</Source>
+				    <Destination>FundraisingPageUniqueID</Destination>
+			    </Column>	
+				
+				<Column>
+				    <Source>title</Source>
+				    <Destination>Title</Destination>
+			    </Column>	
+				
+								
+				<Column>
+				    <Source>url</Source>
+				    <Destination>URL</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>donationsCount</Source>
+				    <Destination>DonationsCount</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>donationsTotalAmount</Source>
+				    <Destination>DonationsTotalAmount</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>donationsGiftAidTotalAmount</Source>
+				    <Destination>DonationsGiftAidTotalAmount</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>activityDescription</Source>
+				    <Destination>ActivityDescription</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>activityFurtherNotes</Source>
+				    <Destination>ActivityFurtherNotes</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>activityPledgeAmount</Source>
+				    <Destination>ActivityPledgeAmount</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>created</Source>
+				    <Destination>Created</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>updated</Source>
+				    <Destination>Updated</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>activityName</Source>
+				    <Destination>ActivityName</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>activitySuperType</Source>
+				    <Destination>ActivitySuperType</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>activityType</Source>
+				    <Destination>ActivityType</Destination>
+					
+			    </Column>
+				
+				
+				<Column>
+				    <Source>activityDateTime</Source>
+				    <Destination>ActivityDateTime</Destination>
+				
+			    </Column>
+				
+				
+				<Column>
+				    <Source>parentActivityId</Source>
+				    <Destination>ParentActivityId</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>activityFundraisingAs</Source>
+				    <Destination>ActivityFundraisingAs</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>activityLocation</Source>
+				    <Destination>ActivityLocation</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>activityEvRegId</Source>
+				    <Destination>ActivityEvRegId</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>activityMotivation</Source>
+				    <Destination>ActivityMotivation</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>activityHowHeard</Source>
+				    <Destination>ActivityHowHeard</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>activityNoFollowup</Source>
+				    <Destination>ActivityNoFollowup</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>activityNoFollowupReason</Source>
+				    <Destination>ActivityNoFollowupReason</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>source</Source>
+				    <Destination>Source</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>activityResCode</Source>
+				    <Destination>ActivityResCode</Destination>
+			    </Column>
+				
+				<Column>
+				    <Source>activityInMemory</Source>
+				    <Destination>ActivityInMemory</Destination>
+			    </Column>
+				
+				
+				<Column>
+				    <Source>dateOfBirthDeceased</Source>
+				    <Destination>DateOfBirthDeceased</Destination>
+					
+			    </Column>
+				
+				<Column>
+				    <Source>dateOfDeathDeceased</Source>
+				    <Destination>DateOfDeathDeceased</Destination>
+					
+			    </Column>
+			
+				
+				<Column>
+				    <Source>productCode</Source>
+				    <Destination>ProductCode</Destination>
+					
+			    </Column>
+
+				
+					<Column>
+				    <Source>seller</Source>
+				    <Destination>Seller</Destination>
+					
+			    </Column>
+				
+	
+				<Column>
+				    <Source>bankAccountCode</Source>
+				    <Destination>BankAccountCode</Destination>
+					
+			    </Column>
+				
+				<Column>
+				    <Source>theme</Source>
+				    <Destination>Theme</Destination>
+					
+			    </Column>
+
+				<Column>
+				    <Source>eventCode</Source>
+				    <Destination>EventCode</Destination>
+					
+			    </Column>
+				
+				
+				<Column>
+					    <Source>fundraisingPageType.propositionSubProposition</Source>
+					    <Destination>PropositionSubProposition</Destination>
+				</Column>
+					
+				<Column>
+					    <Source>fundraiser.uniqueId</Source>
+					    <Destination>FundraiserUniqueID</Destination>
+				</Column>
+					
+					
+					
+					
+					
+			
+			 </ColumnSet>
+			 
+			 
+			
+			 
+    </Table>	
+</DataLoaderConfiguration>

@@ -1,0 +1,7 @@
+﻿CREATE USER [CRWIN\varley05] FOR LOGIN [CRWIN\varley05]
+    WITH DEFAULT_SCHEMA = [Config];
+
+
+
+
+
